@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cyld18c42kcub"]
+[gd_scene load_steps=3 format=3 uid="uid://bayu0tasoxn4l"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1_yrkk7"]
+[ext_resource type="Texture2D" uid="uid://q7p5nxi66h3i" path="res://Lab Assets/sample_maps_(RPG_Maker_MV-MZ)/img/characters/Actor1.png" id="2_vi3yn"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_yrkk7")
@@ -28,6 +29,10 @@ offset_bottom = 249.0
 theme_override_font_sizes/font_size = 40
 text = "Sunset Valley
 "
+
+[node name="Actor1" type="Sprite2D" parent="."]
+position = Vector2(379, 317)
+texture = ExtResource("2_vi3yn")
 
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
