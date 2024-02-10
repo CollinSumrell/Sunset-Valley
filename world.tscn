@@ -1,11 +1,17 @@
-[gd_scene format=3 uid="uid://dibepda1uxgnp"]
+[gd_scene load_steps=3 format=3 uid="uid://b4f284qkqvlxr"]
+
+[ext_resource type="PackedScene" uid="uid://cosl35yn653qu" path="res://Player/Player.tscn" id="1_dkuil"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dagqd"]
+size = Vector2(2078.5, 662.5)
 
 [node name="World" type="Node2D"]
 
-[node name="Label" type="Label" parent="."]
-offset_left = 462.0
-offset_top = 300.0
-offset_right = 591.0
-offset_bottom = 323.0
-theme_override_font_sizes/font_size = 40
-text = "This is the World"
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_dkuil")]
+position = Vector2(273, 402)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(1083, 896)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_dagqd")
