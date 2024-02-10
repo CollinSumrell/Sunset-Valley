@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://cyld18c42kcub"]
+
+[ext_resource type="Script" path="res://Main.gd" id="1_yrkk7"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_yrkk7")
+
+[node name="Quit" type="Button" parent="."]
+offset_left = 388.0
+offset_top = 228.0
+offset_right = 681.0
+offset_bottom = 445.0
+text = "Quit"
+
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
