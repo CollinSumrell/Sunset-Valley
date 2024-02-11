@@ -1,7 +1,8 @@
-[gd_scene load_steps=17 format=3 uid="uid://cosl35yn653qu"]
+[gd_scene load_steps=18 format=3 uid="uid://cosl35yn653qu"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_hgp56"]
 [ext_resource type="Texture2D" uid="uid://q7p5nxi66h3i" path="res://Lab Assets/sample_maps_(RPG_Maker_MV-MZ)/img/characters/Actor1.png" id="1_pm6pl"]
+[ext_resource type="Texture2D" uid="uid://bo0udt14nejr1" path="res://Lab Assets/sample_maps_(RPG_Maker_MV-MZ)/img/system/Shadow1.png" id="3_awip2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_303mm"]
 
@@ -108,7 +109,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_d8ho4")
 }],
 "loop": true,
-"name": &"Walk right",
+"name": &"walkright",
 "speed": 5.0
 }]
 
@@ -119,7 +120,11 @@ script = ExtResource("1_hgp56")
 shape = SubResource("CapsuleShape2D_303mm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(1, -4)
+position = Vector2(0, -2)
 sprite_frames = SubResource("SpriteFrames_0h8rc")
-animation = &"Walk right"
-frame_progress = 0.622995
+animation = &"walkright"
+frame_progress = 0.72579
+
+[node name="Shadow1" type="Sprite2D" parent="."]
+position = Vector2(2, 11)
+texture = ExtResource("3_awip2")
