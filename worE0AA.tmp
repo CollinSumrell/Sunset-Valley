@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cv2ebu7hj446q" path="res://Lab Assets/48px+MVMZ/Mad_Scientist_Lab_A4.png" id="1_yi063"]
 [ext_resource type="Texture2D" uid="uid://c84wpypbwmi0y" path="res://Lab Assets/48px+MVMZ/Mad_Scientists_Lab_C.png" id="3_fwhvd"]
 [ext_resource type="Texture2D" uid="uid://cailqvsx75fsi" path="res://Lab Assets/32px+VXACE/non-rm-a2-square.png" id="4_qjo1a"]
-[ext_resource type="Texture2D" uid="uid://bapt5e52w8sj5" path="res://Lab Assets/sample_maps_(RPG_Maker_MV-MZ)/img/system/Mad_Scientists_Lab_B.png" id="5_1j4fq"]
+[ext_resource type="Texture2D" uid="uid://bapt5e52w8sj5" path="res://Lab Assets/sample_maps_(RPG_Maker_MV-MZ)/img/tilesets/Mad_Scientists_Lab_B.png" id="5_1j4fq"]
 [ext_resource type="Script" path="res://Area2D.gd" id="6_tugox"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6l7cp"]
@@ -6553,7 +6553,7 @@ texture = ExtResource("5_1j4fq")
 sources/1 = SubResource("TileSetAtlasSource_1qwuw")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0e8h5"]
-size = Vector2(60.75, 31)
+size = Vector2(48, 21)
 
 [node name="World" type="Node2D"]
 
@@ -6601,8 +6601,7 @@ position = Vector2(273, 402)
 script = ExtResource("6_tugox")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(212, -261)
+position = Vector2(215, -264)
 shape = SubResource("RectangleShape2D_0e8h5")
 
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
-[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
+[connection signal="body_entered" from="Area2D" to="CharacterBody2D" method="_on_area_2d_body_entered"]
