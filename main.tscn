@@ -1,33 +1,73 @@
-[gd_scene load_steps=2 format=3 uid="uid://cyld18c42kcub"]
+[gd_scene load_steps=6 format=3 uid="uid://bokscotyayqgx"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1_yrkk7"]
+[ext_resource type="FontFile" uid="uid://fkpy7nnqjtg7" path="res://Fonts/PressStart2P-Regular.ttf" id="2_ahf6f"]
+[ext_resource type="Texture2D" uid="uid://ce6m5oyp4lf6h" path="res://Images/Main Key Art.jpeg" id="2_tkwhn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k2bth"]
+bg_color = Color(0, 0, 0, 0.752941)
+skew = Vector2(2.08165e-12, 2.08165e-12)
+border_width_left = 16
+border_width_top = 16
+border_width_right = 16
+border_width_bottom = 16
+border_color = Color(0.901961, 0.560784, 0.588235, 1)
+border_blend = true
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2wfdp"]
+bg_color = Color(0, 0, 0, 0.752941)
+skew = Vector2(2.08165e-12, 2.08165e-12)
+border_width_left = 16
+border_width_top = 16
+border_width_right = 16
+border_width_bottom = 16
+border_color = Color(0.901961, 0.560784, 0.588235, 1)
+border_blend = true
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_yrkk7")
 
-[node name="Quit" type="Button" parent="."]
-offset_left = 889.0
-offset_top = 853.0
-offset_right = 1384.0
-offset_bottom = 1169.0
-text = "Quit"
+[node name="MainKeyArt" type="Sprite2D" parent="."]
+position = Vector2(1154.5, 651)
+scale = Vector2(1.30078, 1.30078)
+texture = ExtResource("2_tkwhn")
 
-[node name="Play" type="Button" parent="."]
-offset_left = 889.0
-offset_top = 401.0
-offset_right = 1384.0
-offset_bottom = 717.0
-theme_override_font_sizes/font_size = 60
-text = "Play"
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_left = 428.0
+offset_top = 925.0
+offset_right = 1866.0
+offset_bottom = 1094.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 128
+alignment = 1
 
-[node name="Label" type="Label" parent="."]
-offset_left = 993.0
-offset_top = 194.0
-offset_right = 1247.0
-offset_bottom = 249.0
-theme_override_font_sizes/font_size = 40
-text = "Sunset Valley
-"
+[node name="Play" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_ahf6f")
+theme_override_font_sizes/font_size = 44
+theme_override_styles/normal = SubResource("StyleBoxFlat_k2bth")
+text = "PLAY"
 
-[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
-[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[node name="Quit" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 0
+theme_override_fonts/font = ExtResource("2_ahf6f")
+theme_override_font_sizes/font_size = 44
+theme_override_styles/normal = SubResource("StyleBoxFlat_2wfdp")
+text = "QUIT"
+
+[connection signal="pressed" from="HBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="HBoxContainer/Quit" to="." method="_on_quit_pressed"]
