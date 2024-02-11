@@ -5,21 +5,6 @@
 [node name="Main" type="Node2D"]
 script = ExtResource("1_yrkk7")
 
-[node name="Quit" type="Button" parent="."]
-offset_left = 889.0
-offset_top = 853.0
-offset_right = 1384.0
-offset_bottom = 1169.0
-text = "Quit"
-
-[node name="Play" type="Button" parent="."]
-offset_left = 889.0
-offset_top = 401.0
-offset_right = 1384.0
-offset_bottom = 717.0
-theme_override_font_sizes/font_size = 60
-text = "Play"
-
 [node name="Label" type="Label" parent="."]
 offset_left = 993.0
 offset_top = 194.0
@@ -29,5 +14,24 @@ theme_override_font_sizes/font_size = 40
 text = "Sunset Valley
 "
 
-[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
-[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[node name="MenuButtonsRatio" type="AspectRatioContainer" parent="."]
+offset_left = 649.0
+offset_top = 404.0
+offset_right = 1559.0
+offset_bottom = 859.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuButtonsRatio"]
+layout_mode = 2
+
+[node name="Play" type="Button" parent="MenuButtonsRatio/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Play"
+
+[node name="Quit" type="Button" parent="MenuButtonsRatio/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Quit"
+
+[connection signal="pressed" from="MenuButtonsRatio/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MenuButtonsRatio/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
